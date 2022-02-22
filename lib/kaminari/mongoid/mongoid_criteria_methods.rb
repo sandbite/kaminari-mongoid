@@ -32,7 +32,7 @@ module Kaminari
       end
 
       def without_count
-        extend ::Kaminari::PaginatableWithoutCount
+        extend ::KaminariPatch::PaginatableWithoutCount
       end
 
       private
@@ -47,7 +47,7 @@ module Kaminari
   end
 end
 
-module Kaminari
+module KaminariPatch
   module PaginatableWithoutCount
     # Method used to find last page, force setting to false and then use @records.present?
     # in views to determine if link_to_next_page needs to be displayed.
